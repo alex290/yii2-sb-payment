@@ -85,14 +85,14 @@ to the require section of your `composer.json` file.
 	class PaymentController extends \yii\web\Controller
 	{
 	
-	    public function actionSuccess()
+	public function actionSuccess()
 	    {
 	        $orderPayId = \Yii::$app->request->get('orderId');
 	        return $this->render('success', ['orderPayId' => $orderPayId]);
 	    }
 	    
 	
-    	public function actionFail($param) {
+	public function actionFail($param) {
     		
 	        return $this->render('fail');
 	
@@ -107,7 +107,6 @@ to the require section of your `composer.json` file.
 	
 	
 	use yii\helpers\Html;
-	
 	use alex290\sbpayment\Payment;
 	
 	

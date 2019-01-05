@@ -30,42 +30,30 @@ to the require section of your `composer.json` file.
 	
 	
 	use yii\helpers\Html;
-	
 	use alex290\sbpayment\Payment;
-	
 	use yii\helpers\Url;
 	
 	
 	$sbPayment = new Payment();
-	
 	$sbPayment->userName = 'login-api'; // логин api мерчанта
-	
 	$sbPayment->password = 'password'; // пароль api мерчанта
-	
 	$sbPayment->orderNumber = 121; //Номер ордера в Вашем магазине
 	
-	
 	$sbPayment->returnUrl = Url::home(true).'/payment/success'; //Страница ваозврата после оплаты
-	
 	$sbPayment->failUrl = Url::home(true).'/payment/fail'; //Страница неудачной оплаты
 	
 	$sbPayment->amount = 4654; // Сумма в копейках
 	
 	
 	/**
-	
      * Сервера
-	
      * тестовый - 'https://3dsec.sberbank.ru/payment/rest/'
-	
      * рабочий - 'https://securepayments.sberbank.ru/payment/rest/'
-	
      */
 	
     $sbPayment->server = 'https://3dsec.sberbank.ru/payment/rest/';
 	
 	$regOrder = $sbPayment->register(); //Отправка данных на сервер сбербанка и получение данных для отправки платежа
-	
 	
 	?>
 
@@ -92,25 +80,20 @@ to the require section of your `composer.json` file.
 	namespace app\controllers;
 	
 	use app\models\Order;
-	
 	use Yii;
 	
 	class PaymentController extends \yii\web\Controller
-	
 	{
 	
 	    public function actionSuccess()
-	
-	   {
+	    {
 	        $orderPayId = \Yii::$app->request->get('orderId');
-	
 	        return $this->render('success', ['orderPayId' => $orderPayId]);
-	
 	    }
 	    
 	
     	public function actionFail($param) {
-	
+    		
 	        return $this->render('fail');
 	
 	    }

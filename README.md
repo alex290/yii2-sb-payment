@@ -64,7 +64,7 @@ to the require section of your `composer.json` file.
 
 	<?php if ($regOrder): ?>
 	
-	<?= Html::a('Оплатить сумму - '. $order->sum/100 .' руб.', $regOrder['formUrl'], ['class' => 'btn btn-secondary', 'target'=> "_blank"]) ?>
+	<?= Html::a('Оплатить сумму', $regOrder['formUrl'], ['class' => 'btn btn-secondary', 'target'=> "_blank"]) ?>
 	
 	<?php endif; ?>
 

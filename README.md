@@ -84,21 +84,19 @@ to the require section of your `composer.json` file.
 	
 	class PaymentController extends \yii\web\Controller
 	{
-	
-	public function actionSuccess()
-	    {
-	        $orderPayId = \Yii::$app->request->get('orderId');
-	        return $this->render('success', ['orderPayId' => $orderPayId]);
-	    }
+		public function actionSuccess()
+		{
+			$orderPayId = \Yii::$app->request->get('orderId');
+			return $this->render('success', ['orderPayId' => $orderPayId]);
+		}
 	    
-	
-	public function actionFail($param) {
+	    
+		public function actionFail($param) 
+		{
     		
-	        return $this->render('fail');
+			return $this->render('fail');
 	
-	    }
-	   
-	
+		}
 	}
 
 и во вьюшке success.php получем полную информацию о текущем платеже

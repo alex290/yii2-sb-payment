@@ -113,7 +113,7 @@ to the require section of your `composer.json` file.
 	$sbPayment = new Payment();
 	
 	$sbPayment->userName = 'login-api';
-	$sbPayment->password = 'pridumki';
+	$sbPayment->password = 'password';
 	
 	$getOrder = $sbPayment->getOrderInfo($orderPayId); //получем полную информацию о текущем платеже
 	?>
